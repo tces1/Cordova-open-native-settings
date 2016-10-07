@@ -127,8 +127,14 @@ public class NativeSettings extends CordovaPlugin {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS));
         } else if (action.equals("wireless")) {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+        } else if (action.equals("huawei_ProtectActivity")) {
+            Intent intent = new Intent();
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            ComponentName comp = new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.optimize.process.ProtectActivity");
+            intent.setComponent(comp);
+            this.cordova.getActivity().startActivity(intent);
         } else {
-             status = PluginResult.Status.INVALID_ACTION;
+            status = PluginResult.Status.INVALID_ACTION;
         }
         
         callbackContext.sendPluginResult(new PluginResult(status, result));
