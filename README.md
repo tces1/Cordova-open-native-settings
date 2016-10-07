@@ -80,7 +80,8 @@ Select one of the options below for the param settingName
     "voice_input",
     "wifi_ip",
     "wifi",
-    "wireless"
+    "wireless",
+    "huawei_ProtectActivity"
 ```
 
 ##Using the plugin for Android
